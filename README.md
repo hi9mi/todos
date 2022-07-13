@@ -1,0 +1,1 @@
+## todos app for trying effector and feature sliced
