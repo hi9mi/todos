@@ -61,10 +61,10 @@ export class AuthService {
         error instanceof PrismaClientKnownRequestError &&
         error.code === 'P2002'
       ) {
-        throw new ForbiddenException('Credentials incorrect');
+        throw new ForbiddenException(error.message);
       }
       throw new HttpException(
-        { status: 500, message: 'Something went wrong', error },
+        { status: 500, message: 'Internal server error', error: error },
         500,
       );
     }
@@ -105,10 +105,10 @@ export class AuthService {
         error instanceof PrismaClientKnownRequestError &&
         error.code === 'P2002'
       ) {
-        throw new ForbiddenException('Credentials incorrect');
+        throw new ForbiddenException(error.message);
       }
       throw new HttpException(
-        { status: 500, message: 'Something went wrong', error },
+        { status: 500, message: 'Internal server error', error: error },
         500,
       );
     }
@@ -134,10 +134,10 @@ export class AuthService {
         error instanceof PrismaClientKnownRequestError &&
         error.code === 'P2002'
       ) {
-        throw new ForbiddenException('Credentials incorrect');
+        throw new ForbiddenException(error.message);
       }
       throw new HttpException(
-        { status: 500, message: 'Something went wrong', error },
+        { status: 500, message: 'Internal server error', error: error },
         500,
       );
     }
