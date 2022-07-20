@@ -28,6 +28,8 @@ export class NotesController {
     return await this.notesService.create(userId, createNoteDto);
   }
 
+  // add query params to filter
+  // limit, offset, sortBy, sortOrder, search, favorite, unfavorite, tags
   @Get()
   @HttpCode(HttpStatus.OK)
   async findAll(@GetCurrentUserId() userId: number) {
@@ -57,4 +59,8 @@ export class NotesController {
 
   // Todo: implement
   // @Post('/:id/favorite')
+  // @Post('/:id/unfavorite')
+  // @Get('/favorites')
+  // @Get('/trash')
+  // @Post('/:id/tags')
 }

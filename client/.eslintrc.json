@@ -1,0 +1,73 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "ignorePatterns": [
+    "dist",
+    "node_modules",
+    "webpack.*",
+    "config/paths.js",
+    "*.config.js"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        "usePrettierrc": true
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "String": false,
+          "Boolean": false,
+          "Number": false,
+          "Symbol": false,
+          "{}": false,
+          "Object": false,
+          "object": false,
+          "Function": false
+        },
+        "extendDefaults": true
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.common.js"
+      }
+    }
+  }
+}
